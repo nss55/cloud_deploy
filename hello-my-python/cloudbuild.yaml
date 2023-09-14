@@ -1,1 +1,20 @@
+timeout: 3600s
+options:
+  substitution_option: 'ALLOW_LOOSE'
+  machineType: 'E2_HIGHCPU_8'
+  dynamic_substitutions: true
 
+substitutions:
+  _SHORT_SHA: release_1.0
+  _DOCKERFILE_PATH: /Dockerfile
+  _DEPLOY_REGION: asia-south1
+
+steps:
+  #Docker Build
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build',
+            '-t', 
+            'gcr.io/${PROJECT_ID}/${_GCR_NM}:$_SHORT_SHA',
+            '-f',
+            '${_DOCKERFILE_PATH}',
+            '.']
