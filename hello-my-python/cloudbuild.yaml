@@ -12,10 +12,22 @@ substitutions:
 
 steps:
   #Docker Build
-  - name: 'python'
-    args: ['build',
-            '-t', 
-            'gcr.io/${PROJECT_ID}/${_GCR_NM}:$_SHORT_SHA',
-            '-f',
-            '${_DOCKERFILE_PATH}',
-            '.']
+    - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 
+           'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage', 
+           '.']
+  
+  
+  
+  
+  
+  
+  
+  
+ # - name: 'python'
+  #  args: ['build',
+   #         '-t', 
+    #        'gcr.io/${PROJECT_ID}/${_GCR_NM}:$_SHORT_SHA',
+     #       '-f',
+      #      '${_DOCKERFILE_PATH}',
+       #     '.']
