@@ -30,7 +30,7 @@ steps:
   - 'deploy'
   - 'cloudrunservice'
   - '--image'
-  - 'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy:$COMMIT_SHA'
+  - 'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy@sha256:a94e39ad839c6c3e0e6475ffb253283d76fcb0c13bcd8b0ea8e557d63ced2fa4'
   - '--region'
   - 'asia-east-1'
   - '--platform'
