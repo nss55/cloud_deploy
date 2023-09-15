@@ -14,19 +14,19 @@
 
    # Docker Deploy container image to Cloud Run
    - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  args:
-  - 'run'
-  - 'deploy'
-  - 'cloudrunservice'
-  - '--image'
-  - 'gcr.io/$PROJECT_ID/first_deploy:$COMMIT_SHA'
-  - '--region'
-  - 'asia-east-1'
-  - '--platform'
-  - 'managed'
-  - '--allow-unauthenticated'
-  images:
-  - 'gcr.io/$PROJECT_ID/first_deploy:$COMMIT_SHA'
-    entrypoint: gcloud
+   args:
+   - 'run'
+   - 'deploy'
+   - 'cloudrunservice'
+   - '--image'
+   - 'gcr.io/$PROJECT_ID/first_deploy:$COMMIT_SHA'
+   - '--region'
+   - 'asia-east-1'
+   - '--platform'
+   - 'managed'
+   - '--allow-unauthenticated'
+   images:
+   - 'gcr.io/$PROJECT_ID/first_deploy:$COMMIT_SHA'
+     entrypoint: gcloud
   
 
