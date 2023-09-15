@@ -7,14 +7,14 @@
 substitutions:
  # _GCR_NM: hello-my-python
  # _SHORT_SHA: release_1.0
-  #_DOCKERFILE_PATH: hello-my-python/Dockerfile
+  _DOCKERFILE_PATH: hello-my-python/Dockerfile
   _DEPLOY_REGION: asia-east1
 
 steps:
   #Docker Build
     - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
-           'asia-east1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage', 
+           'asia-east1-docker.pkg.dev/${PROJECT_ID},'${_DOCKERFILE_PATH}',
            '.']
   
   
