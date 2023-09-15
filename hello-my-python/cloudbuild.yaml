@@ -17,7 +17,7 @@
    args:
    - 'run'
    - 'deploy'
-   - 'cloudrunservice'
+   - 'first_deploy'
    - '--image'
    - 'gcr.io/$PROJECT_ID/first_deploy:$COMMIT_SHA'
    - '--region'
