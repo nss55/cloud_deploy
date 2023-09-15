@@ -18,11 +18,24 @@ steps:
    -'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy:$COMMIT_SHA'
   - dir: 'service/Dockerfile'
 
-  
    # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 
            'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
+
+   # Docker Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - 'run'
+  - 'deploy'
+  - 'cloudrunservice'
+  - '--image'
+  - 'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy:$COMMIT_SHA'
+  - '--region'
+  - 'asia-east-1'
+  - '--platform'
+  - 'managed'
+  - '--allow-unauthenticated'
   
   
   
