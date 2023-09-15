@@ -39,10 +39,4 @@ steps:
   
   
   
- # - name: 'python'
-  #  args: ['build',
-   #         '-t', 
-    #        'gcr.io/${PROJECT_ID}/${_GCR_NM}:$_SHORT_SHA',
-     #       '-f',
-      #      '${_DOCKERFILE_PATH}',
-       #     '.']
+
