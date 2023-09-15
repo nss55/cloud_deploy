@@ -12,7 +12,7 @@ steps:
            'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
 
    # Docker Deploy container image to Cloud Run
-   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   - name: 'gcr.io/cloud-builders/gcloud'
    args:
    - 'run'
    - 'deploy'
