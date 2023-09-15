@@ -5,7 +5,7 @@
   #dynamic_substitutions: true
 
 #substitutions:
- # _GCR_NM: hello-my-python
+ _GCR_NM: hello-my-python
  # _SHORT_SHA: release_1.0
   #_DOCKERFILE_PATH: hello-my-python/Dockerfile
   #_DEPLOY_REGION: asia-east1
@@ -13,11 +13,15 @@
 steps:
   #Docker Build
     - name: 'gcr.io/cloud-builders/docker'
-    args: ["-c", "docker build --build-arg 'CONTAINER_PRIVATE_KEY=$$PRIVATE_KEY' --build-arg 'CONTAINER_PUBLIC_KEY=$$PUBLIC_KEY' -t gcr.io/${PROJECT_ID}/${_JOB_NAME} ."]
+    args: ["-c", "docker build --build-arg 'CONTAINER_PRIVATE_KEY=$$PRIVATE_KEY' --build-arg 'CONTAINER_PUBLIC_KEY=$$PUBLIC_KEY' -t gcr.io/${PROJECT_ID}/${_JOB_NAME}/my-docker-repo/myimage ."]
    images:
    -'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy:$COMMIT_SHA'
   - dir: 'service/Dockerfile'
-  
+
+  ##Docker Push
+  - name: 'gcr.io/cloud-builders/docker'
+   args: ['push', 
+            'gcr.io/${PROJECT_ID}/${_GCR_NM}:$_SHORT_SHA']
   
   
   
