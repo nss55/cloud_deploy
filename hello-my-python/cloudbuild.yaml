@@ -4,7 +4,7 @@
   #machineType: 'E2_HIGHCPU_8'
   #dynamic_substitutions: true
 
-substitutions:
+#substitutions:
  # _GCR_NM: hello-my-python
  # _SHORT_SHA: release_1.0
   #_DOCKERFILE_PATH: hello-my-python/Dockerfile
@@ -16,7 +16,7 @@ steps:
     args: ["-c", "docker build --build-arg 'CONTAINER_PRIVATE_KEY=$$PRIVATE_KEY' --build-arg 'CONTAINER_PUBLIC_KEY=$$PUBLIC_KEY' -t gcr.io/${PROJECT_ID}/${_JOB_NAME} ."]
    images:
    -'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy:$COMMIT_SHA'
-  - dir: 'service/Dockerfile'
+  - dir: 'hello-my-python/Dockerfile'
   
   
   
