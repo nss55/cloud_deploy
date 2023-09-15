@@ -18,12 +18,11 @@ steps:
    -'gcr.io/noble-hydra-398406/github.com/nss55/cloud_deploy:$COMMIT_SHA'
   - dir: 'service/Dockerfile'
 
-  ##Docker Push
+  
+   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 
-            'gcr.io/${PROJECT_ID}/${_GCR_NM}:$_SHORT_SHA']
-  
-  
+    args: ['push', 
+           'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
   
   
   
