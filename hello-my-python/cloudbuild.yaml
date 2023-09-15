@@ -12,7 +12,7 @@ substitutions:
 
 steps:
   #Docker Build
-    - name: 'gcr.io/cloud-builders/docker'
+    #- name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
            'asia-east1-docker.pkg.dev/${PROJECT_ID},'${_DOCKERFILE_PATH}',
            '.']
